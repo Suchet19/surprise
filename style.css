@@ -4,6 +4,7 @@ body {
     background: #0d1117;
     color: white;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .title {
@@ -40,6 +41,7 @@ body {
     border-radius: 10px;
     font-size: 1.3rem;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .no-btn {
@@ -50,4 +52,38 @@ body {
     border-radius: 10px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+/* Fade-in text */
+.fade-text {
+    opacity: 0;
+    animation: fadeIn 2.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: pink;
+    font-size: 20px;
+    animation: floatUp 4s linear forwards;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.8);
+        opacity: 0;
+    }
 }
