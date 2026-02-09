@@ -3,7 +3,8 @@ let messages = [
     "Yaak hinge heltya🥲",
     "Innond sari yochane madu please🥺",
     "Nijja agalva?😗",
-    "Huu heluuuuu😤"
+    "Huu heluuuuu😤",
+    "Stop thatttt😢"
 ];
 
 let index = 0;
@@ -23,7 +24,7 @@ function handleYes() {
     window.location.href = "yes.html";
 }
 
-/* Floating hearts animation */
+/* Floating emoji hearts */
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -34,9 +35,7 @@ function createHeart() {
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    }, 4000);
+    setTimeout(() => heart.remove(), 4000);
 }
 
 setInterval(createHeart, 800);
