@@ -31,10 +31,16 @@ body {
     color: black;
     width: 320px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 10px 20px 20px 20px; /* reduced top padding */
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* content starts at top */
+    align-items: center;
+    gap: 15px; /* spacing between GIF, text, buttons */
 }
+
 
 .gif {
     width: 150px;
