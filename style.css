@@ -21,8 +21,9 @@ body {
     font-size: 2.5rem;
 }
 
+/* Valentine <3 in red */
 .highlight {
-    color: #d4ffb5;
+    color: #ff0033;
 }
 
 .card {
@@ -131,4 +132,24 @@ body {
     0% { transform: translateY(0) rotate(0); opacity: 0.4; }
     50% { transform: translateY(-40px) rotate(20deg); opacity: 0.8; }
     100% { transform: translateY(0) rotate(0); opacity: 0.4; }
+}
+
+/* Center content on YES page */
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    text-align: center;
+}
+
+/* Bigger YES page text */
+.msg {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 20px 0;
+    max-width: 90%;
+    text-align: center;
+    font-weight: 500;
 }
