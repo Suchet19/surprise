@@ -3,8 +3,8 @@ let messages = [
     "Yaak hinge heltya🥲",
     "Innond sari yochane madu please🥺",
     "Nijja agalva?😗",
-    "Huu heluuuuu😤",
-    "Stop thatttt😢"
+    "Huu heluuuuu😤"
+    "Stop thattttt😢"
 ];
 
 let index = 0;
