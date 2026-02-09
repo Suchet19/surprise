@@ -1,10 +1,20 @@
+/* Moving Gradient Background */
 body {
     font-family: "Poppins", sans-serif;
     text-align: center;
-    background: #0d1117;
+    background: linear-gradient(135deg, #ff5f6d, #ff1e62, #ff4d79, #ff6b81);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
     color: white;
     padding: 20px;
     overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .title {
@@ -12,16 +22,17 @@ body {
 }
 
 .highlight {
-    color: #8aff6c;
+    color: #d4ffb5;
 }
 
 .card {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     width: 320px;
     margin: 40px auto;
     padding: 20px;
     border-radius: 12px;
+    backdrop-filter: blur(10px);
 }
 
 .gif {
@@ -54,19 +65,17 @@ body {
     cursor: pointer;
 }
 
-/* Fade-in text */
+/* Fade-in animation */
 .fade-text {
     opacity: 0;
     animation: fadeIn 2.5s ease forwards;
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    to { opacity: 1; }
 }
 
-/* Floating hearts */
+/* Floating emoji hearts */
 .heart {
     position: fixed;
     bottom: -10px;
@@ -78,12 +87,48 @@ body {
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-120vh) scale(1.8);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
+}
+
+/* Transparent big hearts in background */
+.bg-heart {
+    position: fixed;
+    font-size: 90px;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: floatBgHearts 12s infinite ease-in-out;
+}
+
+.heart1 { top: 10%; left: 5%; }
+.heart2 { top: 70%; left: 20%; animation-delay: 2s; }
+.heart3 { top: 40%; right: 10%; animation-delay: 4s; }
+.heart4 { top: 75%; right: 25%; animation-delay: 1s; }
+
+@keyframes floatBgHearts {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-40px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Subtle sparkles */
+.sparkles::before,
+.sparkles::after {
+    content: "✨";
+    position: fixed;
+    font-size: 22px;
+    opacity: 0.4;
+    animation: sparkleMove 6s linear infinite;
+}
+
+.sparkles::after {
+    left: 80%;
+    top: 70%;
+    animation-delay: 2s;
+}
+
+@keyframes sparkleMove {
+    0% { transform: translateY(0) rotate(0); opacity: 0.4; }
+    50% { transform: translateY(-40px) rotate(20deg); opacity: 0.8; }
+    100% { transform: translateY(0) rotate(0); opacity: 0.4; }
 }
